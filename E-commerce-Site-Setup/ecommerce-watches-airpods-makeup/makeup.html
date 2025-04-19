@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Makeup Accessories - GGT</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="hero-header sticky-always">
+    <nav class="navbar container">
+      <div class="nav-left"><a href="index.html" class="logo">GGT</a></div>
+      <div class="nav-center">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="products.html">Products</a>
+      </div>
+      <div class="nav-right">
+        <a id="login-link" href="login.html">Login</a>
+        <a id="cart-link" href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+      </div>
+    </nav>
+  </header>
+  <section class="fullscreen-slideshow">
+    <div class="slideshow-title">GGT</div>
+    <div class="fs-slideshow-container">
+        <img class="fs-slide active" src="images/makeup.jpg" alt="Makeup Product 1">
+        <img class="fs-slide" src="images/makeup.jpg" alt="Makeup Product 2">
+        <img class="fs-slide" src="images/makeup.jpg" alt="Makeup Product 3">
+        <button class="fs-prev" onclick="plusFsSlides(-1)">&#10094;</button>
+        <button class="fs-next" onclick="plusFsSlides(1)">&#10095;</button>
+    </div>
+  </section>
+  <main class="container">
+    <section class="feature-section feature-left">
+        <img src="images/makeup.jpg" alt="Face Brush Kit" class="feature-img">
+        <div class="feature-desc">
+            <h2>Face Brush Kit</h2>
+            <p>Pro-quality brushes for flawless makeup application every time.</p>
+            <button onclick="addToCart('Face Brush Kit', 'makeup.jpg', 39)" class="feature-btn">Add to Cart</button>
+        </div>
+    </section>
+    <section class="feature-section feature-right">
+        <div class="feature-desc">
+            <h2>Powder Compact</h2>
+            <p>Lightweight, silky-smooth compact for that perfect matte finish.</p>
+            <button onclick="addToCart('Powder Compact', 'makeup.jpg', 25)" class="feature-btn">Add to Cart</button>
+        </div>
+        <img src="images/makeup.jpg" alt="Powder Compact" class="feature-img">
+    </section>
+    <section class="feature-section feature-left">
+        <img src="images/makeup.jpg" alt="Beauty Blender" class="feature-img">
+        <div class="feature-desc">
+            <h2>Beauty Blender</h2>
+            <p>Achieve an airbrushed look with our super-soft beauty blender.</p>
+            <button onclick="addToCart('Beauty Blender', 'makeup.jpg', 15)" class="feature-btn">Add to Cart</button>
+        </div>
+    </section>
+    <section class="products-section">
+      <h2>Makeup Accessories</h2>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="images/makeup.jpg" alt="Beauty Pro Brush Kit">
+          <h3>Beauty Pro Brush Kit</h3>
+          <p style="color:gray;">Achieve flawless makeup finish.</p>
+          <p>$39</p>
+          <button onclick="addToCart('Beauty Pro Brush Kit','makeup.jpg',39)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="images/makeup.jpg" alt="Luxe Powder Compact">
+          <h3>Luxe Powder Compact</h3>
+          <p style="color:gray;">Velvety touch, perfect complexion.</p>
+          <p>$29</p>
+          <button onclick="addToCart('Luxe Powder Compact','makeup.jpg',29)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="images/makeup.jpg" alt="All-in-1 Beauty Kit">
+          <h3>All-in-1 Beauty Kit</h3>
+          <p style="color:gray;">Everything you need for a stunning look.</p>
+          <p>$49</p>
+          <button onclick="addToCart('All-in-1 Beauty Kit','makeup.jpg',49)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="images/makeup.jpg" alt="Silky Highlight Powder">
+          <h3>Silky Highlight Powder</h3>
+          <p style="color:gray;">Soft, natural glow in a single swipe.</p>
+          <p>$19</p>
+          <button onclick="addToCart('Silky Highlight Powder','makeup.jpg',19)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="images/makeup.jpg" alt="Beauty Blender Pro">
+          <h3>Beauty Blender Pro</h3>
+          <p style="color:gray;">Seamless blending for all skin types.</p>
+          <p>$24</p>
+          <button onclick="addToCart('Beauty Blender Pro','makeup.jpg',24)">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-container container">
+      <div class="footer-col footer-left">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="products.html">Products</a>
+      </div>
+      <div class="footer-col footer-right">
+        <span>Other Links</span>
+        <a href="watches.html">Watches</a>
+        <a href="airpods.html">Airpods</a>
+        <a href="makeup.html">Makeup</a>
+      </div>
+    </div>
+    <div style="margin:1.5rem auto 0 auto;text-align:center;opacity:.8;font-size:.99rem">&copy; 2024 GGT. All rights reserved.</div>
+  </footer>
+  <script>
+  // Fullscreen slideshow logic
+  let fsSlideIndex = 0;
+  function showFsSlides(n) {
+      const slides = document.querySelectorAll('.fs-slide');
+      if (!slides.length) return;
+      fsSlideIndex = (n < 0) ? slides.length - 1 : (n >= slides.length) ? 0 : n;
+      slides.forEach((slide, idx) => {
+          slide.classList.toggle('active', idx === fsSlideIndex);
+      });
+  }
+  function plusFsSlides(n) { showFsSlides(fsSlideIndex + n); }
+  function autoAdvanceFsSlides(){ setInterval(()=>plusFsSlides(1), 4000); }
+  window.addEventListener('DOMContentLoaded',()=>{ showFsSlides(0); autoAdvanceFsSlides(); });
+  function addToCart(name, image, price){
+    let cart = getCart();
+    const idx = cart.findIndex(x=>x.name===name);
+    if(idx>-1){ cart[idx].qty+=1; }
+    else {
+      cart.push({name, image, price, qty:1});
+    }
+    setCart(cart);
+    alert('Added to cart!');
+  }
+  </script>
+  <style>
+  .fullscreen-slideshow {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+  }
+  .slideshow-title {
+      position: absolute;
+      top: 4.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.7rem;
+      color: #fff;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 14px #2563eb, 0 6px 18px #0005;
+      z-index: 3;
+  }
+  .fs-slideshow-container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      z-index: 1;
+  }
+  .fs-slide {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      left: 0;top: 0;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity .6s;
+      z-index: 2;
+  }
+  .fs-slide.active { opacity: 1; z-index: 3;}
+  .fs-prev, .fs-next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 18px;
+      margin-top: -40px;
+      color: #fff;
+      font-size: 2.6rem;
+      background: #000A;
+      border: none;
+      border-radius: 8px;
+      z-index: 4;
+      opacity: 0.7;
+      user-select: none;
+      transition: background .2s;
+  }
+  .fs-prev { left: 40px; }
+  .fs-next { right: 40px; }
+  .fs-prev:hover, .fs-next:hover { background: #2563eb; opacity:1; }
+  .products-section {
+      padding: 20px;
+  }
+  .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+  }
+  .product-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+  }
+  @media (max-width:700px){
+      .feature-section { flex-direction: column !important;gap:1.4rem; }
+      .feature-img { width:98vw;max-width:97vw;height:160px;}
+      .fs-slide,.fs-slide.active,.fs-slideshow-container {height:50vw;min-height:212px;}
+      .slideshow-title { font-size: 1.3rem; top:2.6rem; }
+  }
+  </style>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - GGT</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="hero-header sticky-always">
+    <nav class="navbar container">
+      <div class="nav-left"><a href="index.html" class="logo">GGT</a></div>
+      <div class="nav-center">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="products.html">Products</a>
+      </div>
+      <div class="nav-right">
+        <a id="login-link" href="login.html">Login</a>
+        <a id="cart-link" href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    <section style="max-width:600px;margin:4rem auto;text-align:center;">
+      <h2>Contact Us</h2>
+      <form id="contact-form">
+        <input type="text" id="contact-name" placeholder="Your Name" required style="width:80%;margin:10px 0;padding:8px"><br>
+        <input type="email" id="contact-email" placeholder="Your Email" required style="width:80%;margin:10px 0;padding:8px"><br>
+        <textarea id="contact-message" placeholder="Type your message here..." required style="width:80%;margin:10px 0;padding:8px"></textarea><br>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-container container">
+      <div class="footer-col footer-left">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="products.html">Products</a>
+      </div>
+      <div class="footer-col footer-right">
+        <span>Other Links</span>
+        <a href="watches.html">Watches</a>
+        <a href="airpods.html">Airpods</a>
+        <a href="makeup.html">Makeup</a>
+      </div>
+    </div>
+    <div style="margin:1.5rem auto 0 auto;text-align:center;opacity:.8;font-size:.99rem">&copy; 2024 GGT. All rights reserved.</div>
+  </footer>
+  <script>
+    document.getElementById('contact-form').onsubmit = function(e) {
+      e.preventDefault();
+      if(!document.getElementById('contact-name').value.trim() || !document.getElementById('contact-email').value.trim() || !document.getElementById('contact-message').value.trim()){
+        alert('Please fill all fields.');
+        return false;
+      }
+      alert('Thank you for contacting GGT! (Demo: Form not really sent)');
+      this.reset();
+    }
+  </script>
+</body>
+</html>

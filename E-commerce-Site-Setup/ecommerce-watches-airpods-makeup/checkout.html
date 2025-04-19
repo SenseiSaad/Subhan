@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - GGT</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="hero-header sticky-always">
+    <nav class="navbar container">
+      <div class="nav-left"><a href="index.html" class="logo">GGT</a></div>
+      <div class="nav-center">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="products.html">Products</a>
+      </div>
+      <div class="nav-right">
+        <a id="login-link" href="login.html">Login</a>
+        <a id="cart-link" href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    <section style="max-width:600px;margin:4rem auto;text-align:center;">
+      <h2>Thank You for Your Purchase!</h2>
+      <p>Your order has been placed and our team will contact you soon. You may continue <a href="index.html">shopping here</a>.</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-container container">
+      <div class="footer-col footer-left">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="products.html">Products</a>
+      </div>
+      <div class="footer-col footer-right">
+        <span>Other Links</span>
+        <a href="watches.html">Watches</a>
+        <a href="airpods.html">Airpods</a>
+        <a href="makeup.html">Makeup</a>
+      </div>
+    </div>
+    <div style="margin:1.5rem auto 0 auto;text-align:center;opacity:.8;font-size:.99rem">&copy; 2024 GGT. All rights reserved.</div>
+  </footer>
+  <script>setCart([]);updateCartNav();</script>
+</body>
+</html>
